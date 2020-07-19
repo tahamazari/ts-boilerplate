@@ -1,0 +1,15 @@
+.header-container {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    display: block;
+
+    .header-items{
+        width: 33%;
+        float: left;
+        overflow: hidden;
+        display: block;
+        border: 1px solid #000;
+    }
+
+}
