@@ -3,16 +3,33 @@ import * as React from "react"
 import Header from "../Header"
 
 interface FirstProps {
-    name?: string,
+    todos: [];
+    fetchTodos: Function
+}
+
+interface FirstState {
+    allTodos: []
 }
 
 
-export const First: React.SFC<FirstProps> = (props) => {
-    return(
-        <React.Fragment>
-            <Header />
-            <h1>Hello, First</h1>;
-        </React.Fragment>
-    ) 
+class First extends React.Component<FirstProps, FirstState> {
+    constructor(props: FirstProps){
+        super(props)
+        this.state = {
+            allTodos: []
+        }
+    }
+    componentDidMount(){
+        this.props.fetchTodos()
+    }
+    render(){
+        return(
+            <React.Fragment>
+                <Header />
+                <div>First page</div>
+            </React.Fragment>
+        )
+    }
 }
-   
+
+export default First;

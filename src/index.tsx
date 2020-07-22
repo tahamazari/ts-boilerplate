@@ -1,13 +1,18 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import appRoutes from "./components/Routes/appRoutes";
+//core components
+import { store } from "./state";
+import appRoutes from "./routes/appRoutes";
 
 const appConatiner = (
-    <Router>
-        {appRoutes}
-    </Router>
+    <Provider store={store}>
+        <Router>
+            {appRoutes}
+        </Router>
+    </Provider>
 )
 
 const ROOT = document.querySelector(".index");

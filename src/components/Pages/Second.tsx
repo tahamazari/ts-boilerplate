@@ -1,17 +1,27 @@
 import * as React from "react"
 
+//core components
 import Header from "../Header"
 
 interface SecondProps {
-    name?: string,
+    todos: []
 }
 
 
-export const Second: React.SFC<SecondProps> = (props) => {
-    return(
-        <React.Fragment>
-            <Header />
-            <h1>Hello, Second</h1>;
-        </React.Fragment>
-    ) 
+class Second extends React.Component<SecondProps> {
+
+    componentDidMount(){
+        console.log(this.props.todos)
+    }
+
+    render(){
+        return(
+            <React.Fragment>
+                <Header />
+                <h1>Hello, Second</h1>;
+            </React.Fragment>
+        ) 
+    }
 }
+
+export default Second;

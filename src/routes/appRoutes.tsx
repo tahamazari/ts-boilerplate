@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Route, Switch, Redirect } from 'react-router';
+import { Route, Switch } from 'react-router';
 
-import { App } from "../App";
-import { First } from "../Pages/First";
-import { Second } from "../Pages/Second";
-import { Third } from "../Pages/Third";
+import { App } from "../components/App";
+import First from "../containers/First"
+import Second from "../containers/Second";
+import { Third } from "../components/Pages/Third";
 
 export default (
     <Switch>
