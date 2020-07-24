@@ -20,9 +20,9 @@ export default class Header extends React.Component<IProps, IState> {
         return(
             <div className="header-container">
                 {
-                    this.state.urls.map((item, i) => (
-                        <div className="header-items">
-                            <Link to={`/${item}`} key={i}>{item}</Link>
+                    this.state.urls.map((item, index) => (
+                        <div className="header-items" key={index}>
+                            <Link to={`/${item}`}>{item}</Link>
                         </div>
                     ))
                 }

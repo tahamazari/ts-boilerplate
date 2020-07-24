@@ -6,7 +6,8 @@ import Second from "../../components/Pages/Second";
 
 const mapStateToProps = (state: StoreState) => {
     return {
-        todos: state.todos
+        todos: state.todos,
+        second: state.second
     };
 };
 
