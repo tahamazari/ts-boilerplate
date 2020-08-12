@@ -3,7 +3,7 @@ import { ActionTypes } from "../actions/constants";
 
 export const FirstReducer = (state: Interfaces.Todos[] = [], action:any) => {
     switch (action.type) {
-        case ActionTypes.fetchTodos:
+        case ActionTypes.FETCH_TODOS:
             return action.payload
         default: 
             return state

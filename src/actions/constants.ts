@@ -1,6 +1,8 @@
 export enum ActionTypes {
     //first enums
-    fetchTodos,
+    FETCH_TODOS,
+    SET_TODOS,
     //second enums,
-    setSecond
+    SET_SECOND,
+
 }

@@ -2,11 +2,11 @@ import * as React from "react"
 
 //core components
 import Header from "../Header"
-import * as SecondInterfaces from "../../actions/Second/interfaces"
+import { SecondState } from "../../state/Second"
 
 interface SecondProps {
     todos: [];
-    second: SecondInterfaces.SystemState;
+    second: SecondState;
     setSecond: Function;
 }
 

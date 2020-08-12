@@ -9,7 +9,7 @@ let initialState: SecondState = {
 
 export const SecondReducer = (state = initialState, action:any) => {
     switch (action.type) {
-        case ActionTypes.setSecond:
+        case ActionTypes.SET_SECOND:
             return {
                 ...state,
                 second: action.payload

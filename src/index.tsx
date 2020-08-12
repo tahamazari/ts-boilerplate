@@ -4,8 +4,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
 //core components
-import { store } from "./state";
+import configureStore from "./state";
 import appRoutes from "./routes/appRoutes";
+
+const store = configureStore()
 
 const appConatiner = (
     <Provider store={store}>

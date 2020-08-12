@@ -7,7 +7,7 @@ import { ActionTypes } from "../constants";
 export const setSecond = (data: string) => {
     return (dispatch: Dispatch) => {
         dispatch<Interfaces.setSecondAction>({
-            type: ActionTypes.setSecond,
+            type: ActionTypes.SET_SECOND,
             payload: data
         })
     }

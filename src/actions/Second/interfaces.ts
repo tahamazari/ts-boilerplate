@@ -1,6 +1,6 @@
 import { ActionTypes } from "../constants";
 
 export interface setSecondAction {
-    type: ActionTypes.setSecond;
+    type: ActionTypes.SET_SECOND;
     payload: string
 }

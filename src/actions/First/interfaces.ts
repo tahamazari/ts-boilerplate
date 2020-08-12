@@ -8,6 +8,6 @@ export interface Todos {
 }
 
 export interface FetchTodosAction {
-    type: ActionTypes.fetchTodos;
+    type: ActionTypes.FETCH_TODOS;
     payload: Todos[];
 }

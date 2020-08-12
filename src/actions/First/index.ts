@@ -7,17 +7,29 @@ import { ActionTypes } from "../constants";
 
 const API_POINT = "https://jsonplaceholder.typicode.com/"
 
-export const fetchTodos = () => {
-    return async (dispatch: Dispatch) => {
-        const response = await axios.get<Interfaces.Todos[]>(`${API_POINT}todos`)
+// export const fetchTodos = () => {
+//     return async (dispatch: Dispatch) => {
+//         const response = await axios.get<Interfaces.Todos[]>(`${API_POINT}todos`)
 
-        dispatch<Interfaces.FetchTodosAction>({
-            type: ActionTypes.fetchTodos,
-            payload: response.data
-        })
+//         dispatch<Interfaces.FetchTodosAction>({
+//             type: ActionTypes.fetchTodos,
+//             payload: response.data
+//         })
+//     }
+// }
+
+export const fetchTodos = () => {
+    return {
+        type: ActionTypes.FETCH_TODOS,
+    }
+} 
+
+export const setTodos = (payload: Interfaces.Todos[]) => {
+    return {
+        type: ActionTypes.SET_TODOS,
+        payload    
     }
 }
-
 
 //dispatch should by of type Dispatch i.e imported from redux
 //atm no type check enforcement
