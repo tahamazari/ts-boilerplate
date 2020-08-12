@@ -10,12 +10,7 @@ interface SecondProps {
     setSecond: Function;
 }
 
-interface SecondState {
-    // setUniversity: Function
-}
-
-
-class Second extends React.Component<SecondProps, SecondState> {
+class Second extends React.Component<SecondProps> {
 
     componentDidMount(){
         console.log(this.props.todos)

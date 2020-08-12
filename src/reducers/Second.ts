@@ -1,8 +1,8 @@
 import * as Interfaces from "../actions/Second/interfaces";
 import { ActionTypes } from "../actions/constants";
-import { SystemState } from "../actions/Second/interfaces";
+import { SecondState } from "../state/Second";
 
-let initialState: SystemState = {
+let initialState: SecondState = {
     second: "second",
     third: "third"
 }
