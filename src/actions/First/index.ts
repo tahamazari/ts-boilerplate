@@ -1,22 +1,5 @@
-import axios from "axios";
-import { Dispatch } from "redux";
-
-// core components
 import * as Interfaces from "./interfaces";
 import { ActionTypes } from "../constants";
-
-const API_POINT = "https://jsonplaceholder.typicode.com/"
-
-// export const fetchTodos = () => {
-//     return async (dispatch: Dispatch) => {
-//         const response = await axios.get<Interfaces.Todos[]>(`${API_POINT}todos`)
-
-//         dispatch<Interfaces.FetchTodosAction>({
-//             type: ActionTypes.fetchTodos,
-//             payload: response.data
-//         })
-//     }
-// }
 
 export const fetchTodos = () => {
     return {
@@ -25,6 +8,7 @@ export const fetchTodos = () => {
 } 
 
 export const setTodos = (payload: Interfaces.Todos[]) => {
+    console.log(payload)
     return {
         type: ActionTypes.SET_TODOS,
         payload    

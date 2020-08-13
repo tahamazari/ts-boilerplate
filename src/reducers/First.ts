@@ -3,8 +3,11 @@ import { ActionTypes } from "../actions/constants";
 
 export const FirstReducer = (state: Interfaces.Todos[] = [], action:any) => {
     switch (action.type) {
-        case ActionTypes.FETCH_TODOS:
-            return action.payload
+        case ActionTypes.SET_TODOS:
+            return {
+                ...state,
+                todos: action.payload
+            }
         default: 
             return state
     }
