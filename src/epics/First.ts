@@ -9,12 +9,12 @@ import * as FirstInterfaces from "../actions/First/interfaces";
 import * as FirstActions from "../actions/First";
 
 //constants
-const API_POINT = "https://jsonplaceholder.typicode.com/todos"
+const API_POINT = "https://jsonplaceholder.typicode.com"
 
 export const fetchTodosEpic = (action$: any) => action$.pipe(
     ofType(ActionTypes.FETCH_TODOS),
     mergeMap(() =>
-      ajax.getJSON(`${API_POINT}`)
+      ajax.getJSON(`${API_POINT}/todos`)
       .pipe(
         flatMap((result: FirstInterfaces.Todos[]) => {
             return [
@@ -24,12 +24,3 @@ export const fetchTodosEpic = (action$: any) => action$.pipe(
       )
     )
   );
-
-  // const fetchUserEpic = action$ => action$.pipe(
-  //   ofType(FETCH_USER),
-  //   mergeMap(action =>
-  //     ajax.getJSON(`https://api.github.com/users/${action.payload}`).pipe(
-  //       map(response => fetchUserFulfilled(response))
-  //     )
-  //   )
-  // );
