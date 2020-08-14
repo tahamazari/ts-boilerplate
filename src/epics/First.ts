@@ -3,6 +3,10 @@ import { ActionTypes } from "../actions/constants";
 import { ofType } from 'redux-observable';
 import { mergeMap, flatMap } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
+// import { push } from 'react-router-redux';
+import {history} from "../index";
+import { replace } from "connected-react-router";
+import { push } from "connected-react-router"
 
 //Setter Actions and Interfaces
 import * as FirstInterfaces from "../actions/First/interfaces";
@@ -18,7 +22,9 @@ export const fetchTodosEpic = (action$: any) => action$.pipe(
       .pipe(
         flatMap((result: FirstInterfaces.Todos[]) => {
             return [
-                FirstActions.setTodos(result)
+                FirstActions.setTodos(result),
+                // history.push("/third")
+                push("/third")
             ]
         })
       )
