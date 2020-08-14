@@ -3,25 +3,16 @@ import { Link } from "react-router-dom";
 
 import '../../styles/header.scss';
 
-interface IProps {}
+const urls = ['first', 'second', 'third']
 
-interface IState {
-    urls: string[]
-}
+const Header: React.FunctionComponent = () => {
 
-export default class Header extends React.Component<IProps, IState> {
-    constructor(props: IProps){
-        super(props)
-        this.state = {
-            urls: ['first', 'second', 'third']
-        }
-    }
-    render(){
+    const mapUrls = () => {
         return(
             <div className="header-container">
                 {
-                    this.state.urls.map((item, index) => (
-                        <div className="header-items" key={index}>
+                    urls.map((item, key) => (
+                        <div className="header-items" key={key}>
                             <Link to={`/${item}`}>{item}</Link>
                         </div>
                     ))
@@ -29,4 +20,12 @@ export default class Header extends React.Component<IProps, IState> {
             </div>
         )
     }
+
+    return(
+        <div className="header-container">
+            { mapUrls() }
+        </div>
+    )
 }
+
+export default Header;
