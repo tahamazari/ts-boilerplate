@@ -1,12 +1,12 @@
-import * as React from "react"
+import * as React from "react";
 
 //core components
-import Header from "../Header"
-import { SecondState } from "../../state/Second"
+import Header from "../Header";
+import { ISecondState } from "../../state/Second";
 
 interface ISecondProps {
     todos: [];
-    second: SecondState;
+    second: ISecondState;
     setSecond: Function;
 }
 

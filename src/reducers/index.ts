@@ -4,11 +4,11 @@ import { combineReducers } from "redux";
 import { FirstReducer } from "./First";
 import { SecondReducer } from "./Second";
 import * as FirstInerfaces from "../actions/First/interfaces";
-import { SecondState } from "../state/Second";
+import { ISecondState } from "../state/Second";
 
 export interface StoreState {
     todos: FirstInerfaces.Todos[],
-    second: SecondState
+    second: ISecondState
 }
 
 export const reducers = combineReducers<StoreState>({

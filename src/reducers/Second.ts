@@ -1,13 +1,7 @@
-import * as Interfaces from "../actions/Second/interfaces";
 import { ActionTypes } from "../actions/constants";
-import { SecondState } from "../state/Second";
+import { SecondState}  from "../state/Second";
 
-let initialState: SecondState = {
-    second: "second",
-    third: "third"
-}
-
-export const SecondReducer = (state = initialState, action:any) => {
+export const SecondReducer = (state = SecondState, action:any) => {
     switch (action.type) {
         case ActionTypes.SET_SECOND:
             return {
