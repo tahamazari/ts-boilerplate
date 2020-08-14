@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import { App } from "../components/App";
 import First from "../containers/First"
 import Second from "../containers/Second";
-import { Third } from "../components/Pages/Third";
+import Third from "../components/Pages/Third";
 
 export default (
     <Switch>
