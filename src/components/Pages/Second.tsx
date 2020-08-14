@@ -4,41 +4,39 @@ import * as React from "react"
 import Header from "../Header"
 import { SecondState } from "../../state/Second"
 
-interface SecondProps {
+interface ISecondProps {
     todos: [];
     second: SecondState;
     setSecond: Function;
 }
 
-class Second extends React.Component<SecondProps> {
+const Second: React.FunctionComponent<ISecondProps>= (props: ISecondProps) => {
 
-    componentDidMount(){
-        console.log(this.props.todos)
-        console.log(this.props.second["second"])
-    }
+    React.useEffect(() => {
+        console.log(props.todos)
+        console.log(props.second["second"])
+    }, [])
 
-    setUniversity = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const setUniversity = (event: React.MouseEvent<HTMLButtonElement>) => {
         let value: string = event.currentTarget.value
-        this.props.setSecond(value)
+        props.setSecond(value)
     }
 
-    render(){
-        return(
-            <React.Fragment>
-                <Header />
-                <h1>Hello, Second</h1>
-                <button value="nust" onClick={this.setUniversity}>NUST</button>
-                <button value="fast" onClick={this.setUniversity}>FAST</button>
-                <button value="lums" onClick={this.setUniversity}>LUMS</button>
-                <div>
-                    {this.props.second.second}
-                </div>
-                <div>
-                    {this.props.second.third}
-                </div>
-            </React.Fragment>
-        ) 
-    }
+    return(
+        <React.Fragment>
+            <Header />
+            <h1>Hello, Second</h1>
+            <button value="nust" onClick={setUniversity}>NUST</button>
+            <button value="fast" onClick={setUniversity}>FAST</button>
+            <button value="lums" onClick={setUniversity}>LUMS</button>
+            <div>
+                {props.second.second}
+            </div>
+            <div>
+                {props.second.third}
+            </div>
+        </React.Fragment>
+    )
 }
 
 export default Second;
