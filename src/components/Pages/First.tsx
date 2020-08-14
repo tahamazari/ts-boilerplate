@@ -1,5 +1,6 @@
-import * as React from "react"
+import * as React from 'react';
 
+//core components
 import Header from "../Header"
 
 interface IFirstProps {
@@ -14,11 +15,13 @@ interface IMapTodos {
     completed: false;
 }
 
-class First extends React.Component<IFirstProps> {
-    componentDidMount(){
-        this.props.fetchTodos()
-    }
-    mapTodos = (todos: []) => {
+
+const First: React.FunctionComponent<IFirstProps> = (props: IFirstProps) => {
+    React.useEffect(() => {
+        console.log("heheheh")
+        props.fetchTodos()
+    }, []);
+    const mapTodos = (todos: []) => {
         return(
             <div>
                 {
@@ -35,20 +38,19 @@ class First extends React.Component<IFirstProps> {
             </div>
         )
     }
-    render(){
-        return(
-            <React.Fragment>
-                <Header />
-                <div>First page</div>
-                <div>
-                    {
-                        Object.keys(this.props.todos).length != 0 ?
-                        this.mapTodos(this.props.todos.todos) : <div>No data available</div>
-                    }
-                </div>
-            </React.Fragment>
-        )
-    }
+
+    return(
+        <React.Fragment>
+            <Header />
+            <div>First Page</div>
+            <div>
+                {
+                    Object.keys(props.todos).length != 0 ?
+                    mapTodos(props.todos.todos) : <div>No data available</div>
+                }
+            </div>
+        </React.Fragment>
+    )
 }
 
 export default First;
