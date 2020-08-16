@@ -7,19 +7,16 @@ import "rxjs";
 //core components
 import configureStore from "./state";
 import appRoutes from "./routes/appRoutes";
-import { createBrowserHistory } from 'history';
-// import { routerMiddleware } from 'react-router-redux';
+import history from "./history"
 
-export const history = createBrowserHistory();
 const store = configureStore()
-// const routMiddleware = routerMiddleware(history);
 
 const appConatiner = (
-    <Provider store={store}>
-        <Router history={history}>
+    <Router history={history}>
+        <Provider store={store}>
             {appRoutes}
-        </Router>
-    </Provider>
+        </Provider>
+    </Router>
 )
 
 const ROOT = document.querySelector(".index");

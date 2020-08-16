@@ -4,7 +4,7 @@ import * as React from 'react';
 import Header from "../Header"
 
 interface IFirstProps {
-    todos: any;
+    todos: any,
     fetchTodos: Function;
 }
 
@@ -18,8 +18,9 @@ interface IMapTodos {
 
 const First: React.FunctionComponent<IFirstProps> = (props: IFirstProps) => {
     React.useEffect(() => {
-        console.log("heheheh")
-        props.fetchTodos()
+        if(Object.keys(props.todos).length != 1){
+            props.fetchTodos()
+        }
     }, []);
     const mapTodos = (todos: []) => {
         return(

@@ -8,7 +8,6 @@ export const fetchTodos = () => {
 } 
 
 export const setTodos = (payload: Interfaces.Todos[]) => {
-    console.log(payload)
     return {
         type: ActionTypes.SET_TODOS,
         payload    
